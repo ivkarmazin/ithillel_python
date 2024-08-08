@@ -132,7 +132,7 @@
       <workItem from="1722885360201" duration="743000" />
       <workItem from="1722886119280" duration="6780000" />
       <workItem from="1722893915229" duration="113000" />
-      <workItem from="1722894035075" duration="14250000" />
+      <workItem from="1722894035075" duration="14562000" />
     </task>
     <servers />
   </component>
@@ -140,7 +140,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ithillel_python$hw3.coverage" NAME="hw3 Coverage Results" MODIFIED="1723143539139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3" />
+    <SUITE FILE_PATH="coverage/ithillel_python$hw3.coverage" NAME="hw3 Coverage Results" MODIFIED="1723143722963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3" />
     <SUITE FILE_PATH="coverage/ithillel_python$hw2.coverage" NAME="hw2 Coverage Results" MODIFIED="1722961316728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
   </component>
 </project>
