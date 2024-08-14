@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify, render_template_string
+from webargs import fields
+from webargs.flaskparser import use_args
 from faker import Faker
 import random
 from datetime import datetime, timedelta
@@ -12,17 +14,26 @@ def random_birthday():
     end = datetime.strptime('2006-12-31', '%Y-%m-%d')
     return start + timedelta(days=random.randint(0, int((end - start).days)))
 
+user_args_pass = {
+'count': fields.Int(missing=10, default=10)
+    }
+
 @app.route('/generate_users', methods=['GET'])
-def generate_students():
+@use_args(user_args_pass, location="query")
+def generate_students(args):
     # count should be as input GET parameter
-    count = int(request.args.get('count', 10))
+    count = args['count']
     if not isinstance(count, int):
         return jsonify({'error': 'Input is not int'}), 400
 
     faker_instance = Faker("uk_UA")
     df = pd.DataFrame()
     # set limit as 1000
-    for i in range(min(count, 1000)):
+    warning = ''
+    if count > 1000:
+        warning = ' (Max 1000 count)'
+        count = min(count, 1000)
+    for i in range(count):
         # first_name, last_name, email, password, birthday (18-60)
         new_row = {
             'name': faker_instance.first_name(),
@@ -37,38 +48,41 @@ def generate_students():
     file = 'users.csv'
     df.to_csv(file, index=False)
     table_html = df.to_html(index=False)
+
     html = f"""
     <html>
     <head><title>Fake Users</title></head>
     <body>
-        <h1>Fake Users</h1>
+        <h1>Fake Users{warning}</h1>
         {table_html}
     </body>
     </html>
     """
     return html
 
+user_args_btc = {
+    'currency': fields.Str(missing='USD', default='USD'),  # Required int, must be > 0
+    'count': fields.Str(missing='1', default='1')  # Optional string, defaults to 'User'
+}
+
 @app.route('/bitcoin_rate', methods=['GET'])
-def get_bitcoin_value():
+@use_args(user_args_btc, location="query")
+def get_bitcoin_value(args):
     # /bitcoin_rate?currency=UAH&convert=100
     # input parameter currency code - default is USD
     # input parameter count and multiply by currency (int) - default count is 1
-    currency = request.args.get('currency', 'USD')
-    count = request.args.get('count', 1)
+    currency = args['currency']
+    count = args['count']
 
     # return value currency of bitcoin
     url = "https://test.bitpay.com/rates/BTC/" + currency
 
-    headers = {
-        "accept": "application/json",
-        "Content-Type": "application/json",
-        "X-Accept-Version": "2.0.0"
-    }
-
-    response = requests.get(url, headers=headers)
-
-    return str(float(json.loads(response.text)["data"]["rate"]) \
-               * float(count))
+    response = requests.get(url)
+    if response.status_code == 200:
+        price = json.loads(response.text)["data"]["rate"]
+        price = float(price)
+        count = float(count)
+        return str(price * count)
 
 
 if __name__ == '__main__':
