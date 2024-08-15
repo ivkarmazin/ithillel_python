@@ -1,6 +1,6 @@
 from flask import Flask
 from webargs import fields
-from webargs.flaskparser import use_args
+from webargs.flaskparser import use_kwargs
 import sqlite3
 from datetime import timedelta
 
@@ -17,19 +17,20 @@ user_args_country = {
     'country': fields.Str(missing='ALL', dump_default='ALL')
     }
 @app.route('/country-revenue', methods=['GET'])
-@use_args(user_args_country, location="query")
-def country_revenue(args):
-    country = args['country']
-    # if not isinstance(country, str):
-    #     return jsonify({'error': 'Input is not str'}), 400
-    print(country)
+@use_kwargs(user_args_country, location="query")
+def country_revenue(country):
+
+    response = {
+        "country": country
+    }
+
     if country != 'ALL':
         query = "SELECT SUM(TOTAL) FROM invoices WHERE BillingCountry = '{}'".format(country)
         data = execute_query(query=query)
-    else:
-        query = "SELECT SUM(TOTAL) FROM invoices"
-        data = execute_query(query=query)
-    # print(data)
+        return data
+
+    query = "SELECT SUM(TOTAL) FROM invoices"
+    data = execute_query(query=query)
     return data
 
 @app.route('/total-time')
