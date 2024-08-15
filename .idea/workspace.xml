@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6e49cf0-26b8-4363-a411-5a3a952ffabb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW4/chinook.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW3/hw3.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW3/hw3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW3/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW3/users.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +47,31 @@
   "keyToString": {
     "Python.hw2.executor": "Run",
     "Python.hw3.executor": "Run",
+    "Python.hw4.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "HW3",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "HW4",
     "last_opened_file_path": "C:/Users/ivkar/OneDrive/Desktop/ithillel_python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python.hw3">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ivkar\OneDrive\Desktop\ithillel_python\HW4" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="hw2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ithillel_python" />
       <option name="ENV_FILES" value="" />
@@ -139,6 +151,7 @@
       <workItem from="1722893915229" duration="113000" />
       <workItem from="1722894035075" duration="20861000" />
       <workItem from="1723606433565" duration="5342000" />
+      <workItem from="1723659530975" duration="12423000" />
     </task>
     <servers />
   </component>
@@ -146,7 +159,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ithillel_python$hw3.coverage" NAME="hw3 Coverage Results" MODIFIED="1723592583098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3" />
+    <SUITE FILE_PATH="coverage/ithillel_python$hw4.coverage" NAME="hw4 Coverage Results" MODIFIED="1723675936320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW4" />
+    <SUITE FILE_PATH="coverage/ithillel_python$hw3.coverage" NAME="hw3 Coverage Results" MODIFIED="1723674009715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3" />
     <SUITE FILE_PATH="coverage/ithillel_python$hw2.coverage" NAME="hw2 Coverage Results" MODIFIED="1722961316728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW2" />
   </component>
 </project>
