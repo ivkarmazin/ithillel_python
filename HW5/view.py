@@ -9,8 +9,7 @@ user_args_city = {
     }
 @app.route('/city-genre', methods=['GET'])
 @use_kwargs(user_args_city, location="query")
-def city_genre(**kwargs):
-    city = kwargs['city']
+def city_genre(city):
 
     query = ("SELECT g.Name \
                 FROM genres g \
