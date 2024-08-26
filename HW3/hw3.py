@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify, render_template_string
-from webargs import fields
-from webargs.flaskparser import use_args
 from faker import Faker
 import random
 from datetime import datetime, timedelta
@@ -23,12 +21,14 @@ user_args_pass = {
 def generate_students(args):
     # count should be as input GET parameter
     count = args['count']
+    
     if not isinstance(count, int):
         return jsonify({'error': 'Input is not int'}), 400
 
     faker_instance = Faker("uk_UA")
     df = pd.DataFrame()
     # set limit as 1000
+
     warning = ''
     if count > 1000:
         warning = ' (Max 1000 count)'
@@ -48,7 +48,6 @@ def generate_students(args):
     file = 'users.csv'
     df.to_csv(file, index=False)
     table_html = df.to_html(index=False)
-
     html = f"""
     <html>
     <head><title>Fake Users</title></head>
@@ -83,7 +82,6 @@ def get_bitcoin_value(args):
         price = float(price)
         count = float(count)
         return str(price * count)
-
 
 if __name__ == '__main__':
     app.run(

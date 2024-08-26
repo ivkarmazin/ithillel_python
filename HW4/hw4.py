@@ -20,16 +20,14 @@ user_args_country = {
 @use_args(user_args_country, location="query")
 def country_revenue(args):
     country = args['country']
-    # if not isinstance(country, str):
-    #     return jsonify({'error': 'Input is not str'}), 400
-    print(country)
+    
     if country != 'ALL':
         query = "SELECT SUM(TOTAL) FROM invoices WHERE BillingCountry = '{}'".format(country)
         data = execute_query(query=query)
     else:
         query = "SELECT SUM(TOTAL) FROM invoices"
         data = execute_query(query=query)
-    # print(data)
+
     return data
 
 @app.route('/total-time')
