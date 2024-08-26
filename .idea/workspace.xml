@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6e49cf0-26b8-4363-a411-5a3a952ffabb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW4/chinook.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HW6/hw6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
     "Python.hw4.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "HW4",
+    "git-widget-placeholder": "HW6",
     "last_opened_file_path": "C:/Users/ivkar/OneDrive/Desktop/ithillel_python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.hw3" />
         <item itemvalue="Python.hw2" />
+        <item itemvalue="Python.hw3" />
       </list>
     </recent_temporary>
   </component>
